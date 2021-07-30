@@ -1,4 +1,4 @@
-/* Copyright 2019 John M Daly <jmdaly@gmail.com>
+/* Copyright 2020 QMK
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -13,5 +13,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include "rev3.h"
+
+#pragma once
+
+#include_next <mcuconf.h>
+
+#undef STM32_GPT_USE_TIM15
+#define STM32_GPT_USE_TIM15 FALSE
+
+#undef STM32_I2C_USE_I2C1
+#define STM32_I2C_USE_I2C1 FALSE
+
+#undef STM32_PWM_USE_TIM17
+#define STM32_PWM_USE_TIM17 TRUE
+
+#undef STM32_PWM_USE_TIM3
+#define STM32_PWM_USE_TIM3 FALSE
+
+#undef STM32_SPI_USE_SPI1
+#define STM32_SPI_USE_SPI1 FALSE
+
+#undef STM32_SPI_USE_SPI2
+#define STM32_SPI_USE_SPI2 FALSE
 
